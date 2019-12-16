@@ -1,18 +1,14 @@
-// Code DelayedButton Component Here
+// Code CoordinatesButton Component Here
 import React from 'react';
 
-class DelayedButton extends React.Component {
+class CoorinatesButton extends React.Component {
   handleClick = event => {
-    event.persist();
-    setTimeout(() => {
-      this.props.onDelayedClick(event);
-    },
-    this.props.delay);
-  };
+    this.props.onReceiveCoordinates([event.clientX, event.clientY]);
+  }
 
   render() {
-    return <button onClick={this.handleClick}>Delayed Click</button>
+    return <button onClick={this.handleClick}>Coordinates</button>
   }
 }
 
-export default DelayedButton; 
+export default CoordinatesButton;
